@@ -19,3 +19,7 @@ enum QNBLEState {
 abstract class QNBleStateListener {
   void onBleSystemState(QNBLEState state);
 }
+
+class QNBleStateListenerDump implements QNBleStateListener {
+  void onBleSystemState(QNBLEState state) {}
+}

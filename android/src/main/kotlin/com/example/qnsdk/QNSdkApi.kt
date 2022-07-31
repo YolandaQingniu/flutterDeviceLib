@@ -5,7 +5,7 @@
  */
 package com.example.qnsdk
 
-import com.yolanda.health.qnblesdk.out.QNBleDevice
+import com.qn.device.out.QNBleDevice
 import io.flutter.plugin.common.MethodChannel.Result
 
 interface QNSdkApi {

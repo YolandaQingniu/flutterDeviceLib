@@ -14,6 +14,7 @@
 part of qnsdk;
 
 abstract class QNScaleState {
+  static const int STATE_UNKNOWN = -99;
   static const int STATE_Link_LOSS = -1;
   static const int STATE_DISCONNECTED = 0;
   static const int STATE_CONNECTED = 1;
@@ -37,4 +38,23 @@ abstract class QNScaleDataListener {
   void onGetElectric(QNBleDevice device, int electric);
 
   void onScaleStateChange(QNBleDevice device, int scaleState);
+
+  //qnsdkX-2.X
+  void onScaleEventChange(QNBleDevice device, int scaleEvent);
+}
+
+class QNScaleDataListenerDump implements QNScaleDataListener {
+  void onGetUnsteadyWeight(QNBleDevice device, double weight) {}
+
+  void onGetScaleData(QNBleDevice device, QNScaleData data) {}
+
+  void onGetStoredScale(
+      QNBleDevice device, List<QNScaleStoreData> storedDataList) {}
+
+  void onGetElectric(QNBleDevice device, int electric) {}
+
+  void onScaleStateChange(QNBleDevice device, int scaleState) {}
+
+  //qnsdkX-2.X
+  void onScaleEventChange(QNBleDevice device, int scaleEvent) {}
 }

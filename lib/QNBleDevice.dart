@@ -27,7 +27,6 @@ class QNBleDevice {
             params[ArgumentName.rssi],
             params[ArgumentName.isScreenOn]);
 
-  @override
   Map<String, dynamic> getParams() {
     var params = <String, dynamic>{};
     params[ArgumentName.mac] = this.mac;

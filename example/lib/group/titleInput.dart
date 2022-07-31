@@ -11,12 +11,12 @@ import 'package:qnsdk_example/group/paddingText.dart';
 class TitleInput extends StatefulWidget {
   final String text;
   final String initValue;
-  final Function textOnChange;
+  final void Function(String)? textOnChange;
   final TextInputType inputType;
 
   TitleInput(
-      {this.text,
-      this.initValue,
+      {required this.text,
+      required this.initValue,
       this.textOnChange,
       this.inputType = TextInputType.text});
 

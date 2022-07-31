@@ -20,3 +20,18 @@ abstract class QNBleConnectionChangeListener {
 
   void onConnectError(int errorCode);
 }
+
+class QNBleConnectionChangeListenerDump
+    implements QNBleConnectionChangeListener {
+  void onConnecting() {}
+
+  void onConnected() {}
+
+  void onServiceSearchComplete() {}
+
+  void onDisconnecting() {}
+
+  void onDisconnected() {}
+
+  void onConnectError(int errorCode) {}
+}

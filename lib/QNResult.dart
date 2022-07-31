@@ -9,6 +9,6 @@ part of qnsdk;
 
 class QNResult {
   final int errorCode;
-  final String errorMsg;
+  final String? errorMsg;
   QNResult(this.errorCode, [this.errorMsg]);
 }

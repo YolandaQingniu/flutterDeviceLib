@@ -16,3 +16,13 @@ abstract class QNBleDeviceDiscoveryListener {
 
   void onScanFail(int code);
 }
+
+class QNBleDeviceDiscoveryListenerDump implements QNBleDeviceDiscoveryListener {
+  void onDeviceDiscover(QNBleDevice device) {}
+
+  void onStartScan() {}
+
+  void onStopScan() {}
+
+  void onScanFail(int code) {}
+}

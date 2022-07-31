@@ -14,7 +14,7 @@ class PaddingText extends StatelessWidget {
   final EdgeInsets insets;
 
   PaddingText(
-      {@required this.text,
+      {required this.text,
       this.textAlign = TextAlign.start,
       this.fontSize = 17,
       this.insets = const EdgeInsets.fromLTRB(10, 0, 10, 0)});

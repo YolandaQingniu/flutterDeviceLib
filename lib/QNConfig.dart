@@ -66,7 +66,6 @@ class QNConfig {
     this.androidSetNotCheckGPS = androidSetNotCheckGPS;
   }
 
-  @override
   Map<String, dynamic> getParams() {
     var parmas = <String, dynamic>{};
     parmas[ArgumentName.onlyScreenOn] = this.onlyScreenOn;

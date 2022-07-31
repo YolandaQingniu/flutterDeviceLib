@@ -10,16 +10,22 @@ import 'package:qnsdk_example/group/paddingText.dart';
 import 'package:qnsdk_example/group/titleInput.dart';
 import 'package:qnsdk/qnsdk.dart';
 
-class UserInfo extends StatefulWidget {
-  String _userId = '1234567';
-  int _height = 170;
-  String _gender = 'male';
-  bool _athleteType = false;
-  double _clothesWeight = 0;
-  DateTime _birthday = DateTime(1990, 1, 1);
+class UserInfoModel {
+  String userId = '1234567';
+  int height = 170;
+  String gender = 'male';
+  bool athleteType = false;
+  double clothesWeight = 0;
+  DateTime birthday = DateTime(1990, 1, 1);
 
-  QNUser get user => QNUser(_userId, _height, _gender, _birthday,
-      _athleteType ? 1 : 0, _clothesWeight);
+  QNUser get user => QNUser(
+      userId, height, gender, birthday, athleteType ? 1 : 0, clothesWeight);
+}
+
+class UserInfo extends StatefulWidget {
+  final userinfomodel = UserInfoModel();
+
+  QNUser get user => userinfomodel.user;
 
   @override
   _UserInfoState createState() => _UserInfoState();
@@ -47,7 +53,7 @@ class _UserInfoState extends State<UserInfo> {
               PaddingText(
                 text: 'userId',
               ),
-              PaddingText(text: widget._userId)
+              PaddingText(text: widget.userinfomodel.userId)
             ],
           ),
         ),
@@ -55,11 +61,11 @@ class _UserInfoState extends State<UserInfo> {
             flex: 1,
             child: TitleInput(
                 text: 'height',
-                initValue: widget._height.toString(),
+                initValue: widget.userinfomodel.height.toString(),
                 textOnChange: (value) {
                   if (value != null) {
                     setState(() {
-                      widget._height = int.parse(value);
+                      widget.userinfomodel.height = int.parse(value);
                     });
                   }
                 },
@@ -77,19 +83,19 @@ class _UserInfoState extends State<UserInfo> {
             children: <Widget>[
               PaddingText(text: 'gender'),
               Radio(
-                  groupValue: widget._gender,
+                  groupValue: widget.userinfomodel.gender,
                   value: 'male',
                   onChanged: (value) {
                     setState(() {
-                      widget._gender = value;
+                      widget.userinfomodel.gender = value as String;
                     });
                   }),
               Radio(
-                  groupValue: widget._gender,
+                  groupValue: widget.userinfomodel.gender,
                   value: 'female',
                   onChanged: (value) {
                     setState(() {
-                      widget._gender = value;
+                      widget.userinfomodel.gender = value as String;
                     });
                   })
             ],
@@ -101,10 +107,10 @@ class _UserInfoState extends State<UserInfo> {
             children: <Widget>[
               PaddingText(text: 'athleteType'),
               Switch(
-                  value: widget._athleteType,
+                  value: widget.userinfomodel.athleteType,
                   onChanged: (value) {
                     setState(() {
-                      widget._athleteType = value;
+                      widget.userinfomodel.athleteType = value;
                     });
                   }),
             ],
@@ -118,13 +124,13 @@ class _UserInfoState extends State<UserInfo> {
     Locale myLocale = Localizations.localeOf(context);
     var picker = await showDatePicker(
         context: context,
-        initialDate: widget._birthday,
+        initialDate: widget.userinfomodel.birthday,
         firstDate: DateTime(DateTime.now().year - 80),
         lastDate: DateTime(DateTime.now().year - 3));
     setState(() {
       if (picker != null) {
         print(picker);
-        widget._birthday = picker;
+        widget.userinfomodel.birthday = picker;
       }
     });
   }
@@ -136,11 +142,11 @@ class _UserInfoState extends State<UserInfo> {
           flex: 1,
           child: TitleInput(
               text: 'clothesWeight',
-              initValue: widget._clothesWeight.toString(),
+              initValue: widget.userinfomodel.clothesWeight.toString(),
               textOnChange: (value) {
                 if (value != null) {
                   setState(() {
-                    widget._clothesWeight = double.parse(value);
+                    widget.userinfomodel.clothesWeight = double.parse(value);
                   });
                 }
               }),
@@ -153,7 +159,7 @@ class _UserInfoState extends State<UserInfo> {
               RaisedButton(
                 child: PaddingText(
                   text:
-                      '${widget._birthday.year}-${widget._birthday.month}-${widget._birthday.day}',
+                      '${widget.userinfomodel.birthday.year}-${widget.userinfomodel.birthday.month}-${widget.userinfomodel.birthday.day}',
                   insets: EdgeInsets.zero,
                 ),
                 onPressed: _showBirthdayPicker,

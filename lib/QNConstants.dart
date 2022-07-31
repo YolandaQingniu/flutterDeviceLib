@@ -43,6 +43,9 @@ abstract class EventName {
   static const String onDisconnecting = "flutter_onDisconnecting";
   static const String onDisconnected = "flutter_onDisconnected";
   static const String onConnectError = "flutter_onConnectError";
+
+  //qnsdkX-2.x
+  static const String onScaleEventChange = "flutter_onScaleEventChange";
 }
 
 abstract class ArgumentName {
@@ -98,4 +101,7 @@ abstract class ArgumentName {
   static const String scaleState = "scaleState";
 
   static const String scanFailCode = "scanFailCode";
+
+  //qnsdkX-2.X
+  static const String scaleEvent = "scaleEvent";
 }

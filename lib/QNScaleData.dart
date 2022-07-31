@@ -8,10 +8,10 @@
 part of qnsdk;
 
 class QNScaleData {
-  QNUser user;
-  DateTime measureTime;
-  String hmac;
-  List<QNScaleItemData> allItemData;
+  late QNUser user;
+  late DateTime measureTime;
+  late String hmac;
+  late List<QNScaleItemData> allItemData;
 
   QNScaleData(this.user, this.measureTime, this.hmac, this.allItemData);
 

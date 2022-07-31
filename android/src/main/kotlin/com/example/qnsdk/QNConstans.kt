@@ -45,6 +45,8 @@ class EventName {
         const val onDisconnecting = "flutter_onDisconnecting"
         const val onDisconnected = "flutter_onDisconnected"
         const val onConnectError = "flutter_onConnectError"
+        //qnsdkX-2.X
+        const val onScaleEventChange = "flutter_onScaleEventChange"
 
 
     }
@@ -95,6 +97,8 @@ class ArgumentName {
         const val electric = "electric"
         const val scaleState = "scaleState"
         const val scanFailCode = "scanFailCode"
+        //qnsdkX-2.X
+        const val scaleEvent = "scaleEvent"
     }
 
 

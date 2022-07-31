@@ -5,7 +5,7 @@
  */
 package com.example.qnsdk
 
-import com.yolanda.health.qnblesdk.out.*
+import com.qn.device.out.*
 
 class TransformerUtils {
 

@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 
     <application
-        android:name="io.flutter.app.FlutterApplication"
+        android:name="${applicationName}"
         android:label="qnsdk_example"
         android:icon="@mipmap/ic_launcher">
         <activity
